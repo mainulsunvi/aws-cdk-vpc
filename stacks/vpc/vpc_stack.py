@@ -97,16 +97,3 @@ class VpcStack(Stack):
             public_security_group.add_ingress_rule(rule[0], rule[1], rule[2])
 
         return public_security_group
-
-    # def create_instance(self):
-    #     return ec2.Instance(
-    #         self,
-    #         "cdk-instance",
-    #         instance_type=ec2.InstanceType.of(
-    #             ec2.InstanceClass.BURSTABLE2, ec2.InstanceSize.MICRO
-    #         ),
-    #         machine_image=ec2.MachineImage.latest_amazon_linux(),
-    #         vpc=self.vpc,
-    #         security_group=self.public_host_security_group,
-    #         vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC),
-    #     )
